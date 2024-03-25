@@ -9,6 +9,7 @@ const useMDXComponent = (code: string) => {
 
 const components = {
   Image,
+  Callout,
 };
 
 interface MdxProps {
@@ -17,5 +18,5 @@ interface MdxProps {
 
 export const MDXContent = ({ code }: MdxProps) => {
   const Component = useMDXComponent(code);
-  return <Component compnents={components} />;
+  return <Component components={components} />;
 };
