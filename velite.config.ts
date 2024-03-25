@@ -18,8 +18,8 @@ const posts = defineCollection({
       tags: s.array(s.string()).optional(),
       body: s.mdx(),
     })
-    // .transform(computedFields),
-    .transform((data) => ({ ...data, permalink: `/blog/${data.slug}` })),
+    .transform(computedFields),
+  // .transform((data) => ({ ...data, permalink: `/blog/${data.slug}` })),
 });
 
 export default defineConfig({
