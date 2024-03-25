@@ -45,7 +45,7 @@ const SiteHeader = () => {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
-            {/* <ModeToggle /> */}
+            <ModeToggle className="mr-2" />
             <MobileNav />
           </nav>
         </div>
