@@ -6,7 +6,7 @@ import { Icons } from './icons';
 import { cn } from '@/lib/utils';
 import { buttonVariants } from './ui/button';
 import ModeToggle from './mode-toggle';
-import MobileNav from './mobile-nav';
+import { MobileNav } from './mobile-nav';
 
 const SiteHeader = () => {
   return (
@@ -45,7 +45,7 @@ const SiteHeader = () => {
                 <span className="sr-only">Twitter</span>
               </div>
             </Link>
-            <ModeToggle />
+            {/* <ModeToggle /> */}
             <MobileNav />
           </nav>
         </div>
