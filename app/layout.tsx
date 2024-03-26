@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import SiteHeader from '@/components/site-header';
 import { ThemeProvider } from '@/components/theme-provider';
 import { siteConfig } from '@/config/site';
+import SiteFooter from '@/components/site-footer';
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -53,6 +54,7 @@ export default function RootLayout({
             <main className="flex-1">
               <SiteHeader />
               {children}
+              <SiteFooter />
             </main>
           </div>
         </ThemeProvider>

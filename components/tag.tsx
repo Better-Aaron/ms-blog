@@ -4,11 +4,11 @@ import { badgeVariants } from './ui/badge';
 
 interface TagProps {
   tag: string;
-  current?: string;
+  current?: boolean;
   count?: number;
 }
 
-const Tag = ({ tag, current, count }: TagProps) => {
+export const Tag = ({ tag, current, count }: TagProps) => {
   return (
     <Link
       className={cn(
@@ -23,5 +23,3 @@ const Tag = ({ tag, current, count }: TagProps) => {
     </Link>
   );
 };
-
-export default Tag;

@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import React from 'react';
-import Tag from './tag';
+import { Tag } from './tag';
 import { cn } from '@/lib/utils';
 import { Calendar } from 'lucide-react';
 import { formatDate } from '@/lib/utils';

@@ -1,6 +1,6 @@
 import { posts } from '#site/content';
 import { MDXContent } from '@/components/mdx-components';
-import Tag from '@/components/tag';
+import { Tag } from '@/components/tag';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import '@/styles/mdx.css';
@@ -14,7 +14,10 @@ interface PostPageProps {
 
 const getPostFromParams = async (params: PostPageProps['params']) => {
   const slug = params?.slug?.join('/');
-  const post = posts.find((post) => post.slugAsParams === slug);
+  console.log(slug);
+  const post = posts.find(
+    (post) => post.slugAsParams === slug.replace(/%20/g, ' ')
+  );
 
   return post;
 };
@@ -57,7 +60,10 @@ export async function generateMetadata({
 
 export const generateStaticParams = async (): Promise<
   PostPageProps['params'][]
-> => posts.map((post) => ({ slug: post.slugAsParams.split('/') }));
+> =>
+  posts.map((post) => ({
+    slug: post.slugAsParams.split('/'),
+  }));
 
 const PostPage = async ({ params }: PostPageProps) => {
   const post = await getPostFromParams(params);
